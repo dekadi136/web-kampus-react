@@ -1,13 +1,17 @@
 import { Phone, Mail, FileText } from "lucide-react";
 
 export default function ProfileCard() {
+    type ProdileCardProps = {
+        name: String,
+        
+    }
   return (
     <div className="max-w-sm w-full bg-white rounded-2xl shadow p-6">
       {/* Profile Header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
           <img
-            src="https://via.placeholder.com/60"
+            src="https://c.pxhere.com/photos/e1/41/man_person_portrait_face_passport_photograph-1238378.jpg!d"
             alt="Profile"
             className="w-14 h-14 rounded-full object-cover"
           />
