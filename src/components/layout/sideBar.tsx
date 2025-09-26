@@ -1,52 +1,161 @@
-import { Home, Users, BookOpen, Layers, Info } from "lucide-react";
+import {
+  Home,
+  Users,
+  BookOpen,
+  Layers,
+  Info,
+  Menu,
+  ChevronLeft,
+} from "lucide-react";
+import { useState } from "react";
 
 type sideBarProps = {};
 
 const sideBar = ({}) => {
+  const [isCollapsed, setIsCollapse] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsCollapse(!isCollapsed);
+  };
+
   return (
-    <div className="w-64 h-screen bg-blue-700 text-white flex flex-col shadow-lg">
+    <div
+      className={`${
+        isCollapsed ? "w-20" : "w-64"
+      } h-screen bg-slate-50 flex flex-col shadow-xl border-r border-slate-200 transition-all duration-300 ease-in-out`}
+    >
       {/* Header */}
-      <div className="p-6 text-2xl font-bold border-b border-blue-500">
-        Primakara
+      <div className="px-4 py-8 bg-blue-600 text-white relative">
+        <div className={`${isCollapsed ? "text-center" : ""}`}>
+          {!isCollapsed ? (
+            <div>
+              <h1 className="text-2xl font-semibold tracking-wide">
+                Primakara
+              </h1>
+              <p className="text-blue-100 text-sm mt-1 font-medium">
+                Education Portal
+              </p>
+            </div>
+          ) : (
+            <div className="text-2xl font-bold">P</div>
+          )}
+        </div>
+
+        {/* Toggle Button */}
+        <button
+          onClick={toggleSidebar}
+          className="absolute -right-3 top-1/2 transform -translate-y-1/2 bg-white text-blue-600 rounded-full p-2 shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
+        >
+          {isCollapsed ? <Menu size={16} /> : <ChevronLeft size={16} />}
+        </button>
       </div>
 
       {/* Menu */}
-      <nav className="flex-1 p-4 space-y-3">
+      <nav className="flex-1 px-3 py-6 space-y-1">
         <a
           href="#"
-          className="flex items-center gap-3 px-4 py-2 rounded-xl hover:bg-blue-600 transition"
+          className="flex items-center gap-3 px-4 py-3 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium group relative"
+          title={isCollapsed ? "Dashboard" : ""}
         >
-          <Home size={20} /> Dashboard
+          <Home
+            size={20}
+            className="text-slate-500 group-hover:text-blue-600 flex-shrink-0"
+          />
+          {!isCollapsed && "Dashboard"}
+          {isCollapsed && (
+            <div className="absolute left-full ml-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
+              Dashboard
+            </div>
+          )}
         </a>
+
         <a
           href="#"
-          className="flex items-center gap-3 px-4 py-2 rounded-xl hover:bg-blue-600 transition"
+          className="flex items-center gap-3 px-4 py-3 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium group relative"
+          title={isCollapsed ? "Daftar Mahasiswa" : ""}
         >
-          <Users size={20} /> Daftar Mhs
+          <Users
+            size={20}
+            className="text-slate-500 group-hover:text-blue-600 flex-shrink-0"
+          />
+          {!isCollapsed && "Daftar Mahasiswa"}
+          {isCollapsed && (
+            <div className="absolute left-full ml-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
+              Daftar Mahasiswa
+            </div>
+          )}
         </a>
+
         <a
           href="#"
-          className="flex items-center gap-3 px-4 py-2 rounded-xl hover:bg-blue-600 transition"
+          className="flex items-center gap-3 px-4 py-3 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium group relative"
+          title={isCollapsed ? "Daftar Tugas" : ""}
         >
-          <BookOpen size={20} /> Daftar Tugas
+          <BookOpen
+            size={20}
+            className="text-slate-500 group-hover:text-blue-600 flex-shrink-0"
+          />
+          {!isCollapsed && "Daftar Tugas"}
+          {isCollapsed && (
+            <div className="absolute left-full ml-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
+              Daftar Tugas
+            </div>
+          )}
         </a>
+
         <a
           href="#"
-          className="flex items-center gap-3 px-4 py-2 rounded-xl hover:bg-blue-600 transition"
+          className="flex items-center gap-3 px-4 py-3 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium group relative"
+          title={isCollapsed ? "Daftar Kelas" : ""}
         >
-          <Layers size={20} /> Daftar Kelas
+          <Layers
+            size={20}
+            className="text-slate-500 group-hover:text-blue-600 flex-shrink-0"
+          />
+          {!isCollapsed && "Daftar Kelas"}
+          {isCollapsed && (
+            <div className="absolute left-full ml-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
+              Daftar Kelas
+            </div>
+          )}
         </a>
+
         <a
           href="#"
-          className="flex items-center gap-3 px-4 py-2 rounded-xl hover:bg-blue-600 transition"
+          className="flex items-center gap-3 px-4 py-3 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium group relative"
+          title={isCollapsed ? "Informasi" : ""}
         >
-          <Info size={20} /> Info
+          <Info
+            size={20}
+            className="text-slate-500 group-hover:text-blue-600 flex-shrink-0"
+          />
+          {!isCollapsed && "Informasi"}
+          {isCollapsed && (
+            <div className="absolute left-full ml-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
+              Informasi
+            </div>
+          )}
         </a>
       </nav>
 
       {/* Footer */}
-      <div className="p-4 text-xs text-blue-200 border-t border-blue-500">
-        © 2025 Primakara
+      <div
+        className={`px-4 py-4 border-t border-slate-200 bg-slate-25 ${
+          isCollapsed ? "text-center" : ""
+        }`}
+      >
+        {!isCollapsed ? (
+          <div>
+            <p className="text-xs text-slate-500 font-medium">
+              © 2025 Primakara University
+            </p>
+            <p className="text-xs text-slate-400 mt-1">
+              Education Management System
+            </p>
+          </div>
+        ) : (
+          <p className="text-xs text-slate-500 font-bold">©2025</p>
+        )}
       </div>
     </div>
   );
