@@ -26,14 +26,17 @@ export default function Login({ onClick }: toggleProps) {
             placeholder="••••••••"
             className="w-full p-3 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <div className="text-right mt-1">
-            <a
-              href="#"
-              className="text-sm text-blue-600 hover:underline"
-              onClick={onClick}
-            >
-              Sudah memiliki akun?
-            </a>
+          <div className="text-center my-3 text-sm">
+            <p>
+              Belum memiliki akun?
+              <a
+                href="#"
+                className=" text-blue-600 hover:underline ml-1"
+                onClick={onClick}
+              >
+                Register
+              </a>
+            </p>
           </div>
         </div>
 

@@ -9,6 +9,8 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
+import { Link } from "react-router";
+
 type sideBarProps = {};
 
 const sideBar = ({}) => {
@@ -52,39 +54,35 @@ const sideBar = ({}) => {
 
       {/* Menu */}
       <nav className="flex-1 px-3 py-6 space-y-1">
-        <a
-          href="#"
-          className="flex items-center gap-3 px-4 py-3 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium group relative"
-          title={isCollapsed ? "Dashboard" : ""}
-        >
-          <Home
-            size={20}
-            className="text-slate-500 group-hover:text-blue-600 flex-shrink-0"
-          />
-          {!isCollapsed && "Dashboard"}
-          {isCollapsed && (
-            <div className="absolute left-full ml-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
-              Dashboard
-            </div>
-          )}
-        </a>
+        <div className="px-4 py-3 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium group relative">
+          <Link to="/dashboard-mahasiswa" className="flex items-center gap-3">
+            <Home
+              size={20}
+              className="text-slate-500 group-hover:text-blue-600 flex-shrink-0"
+            />
+            {!isCollapsed && "Dashboard"}
+            {isCollapsed && (
+              <div className="absolute left-full ml-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
+                Dashboard
+              </div>
+            )}
+          </Link>
+        </div>
 
-        <a
-          href="#"
-          className="flex items-center gap-3 px-4 py-3 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium group relative"
-          title={isCollapsed ? "Daftar Mahasiswa" : ""}
-        >
-          <Users
-            size={20}
-            className="text-slate-500 group-hover:text-blue-600 flex-shrink-0"
-          />
-          {!isCollapsed && "Daftar Mahasiswa"}
-          {isCollapsed && (
-            <div className="absolute left-full ml-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
-              Daftar Mahasiswa
-            </div>
-          )}
-        </a>
+        <div className="px-4 py-3 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium group relative">
+          <Link to="/daftar-mahasiswa" className="flex items-center gap-3">
+            <Home
+              size={20}
+              className="text-slate-500 group-hover:text-blue-600 flex-shrink-0"
+            />
+            {!isCollapsed && "Daftar Mahasiswa"}
+            {isCollapsed && (
+              <div className="absolute left-full ml-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
+                Daftar Mahasiswa
+              </div>
+            )}
+          </Link>
+        </div>
 
         <a
           href="#"
