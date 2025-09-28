@@ -2,12 +2,13 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
-import DashboardMahasiswa from "./pages/mahasiswa/dashboardMahasiswa.tsx";
+import DashboardMahasiswa from "./pages/mahasiswa/dashboard/dashboardMahasiswa.tsx";
 import Auth from "./components/layout/auth.tsx";
-import DaftarMahasiswa from "./pages/mahasiswa/daftarMahasiswa.tsx";
-import DaftarTugas from "./pages/mahasiswa/daftarTugas.tsx";
-import DaftarKelas from "./pages/mahasiswa/daftarKelas.tsx";
-import Info from "./pages/mahasiswa/info.tsx";
+import DaftarMahasiswa from "./pages/mahasiswa/daftarMahasiswa/daftarMahasiswa.tsx";
+import DaftarTugas from "./pages/mahasiswa/tugas/daftarTugas.tsx";
+import DaftarKelas from "./pages/mahasiswa/kelas/daftarKelas.tsx";
+import Info from "./pages/mahasiswa/info/info.tsx";
+import KumpulTugas from "./pages/mahasiswa/tugas/kumpulTugas.tsx";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/daftar-tugas",
     element: <DaftarTugas />,
+  },
+  {
+    path: "/daftar-tugas/:id",
+    element: <KumpulTugas />,
   },
   {
     path: "/daftar-kelas",

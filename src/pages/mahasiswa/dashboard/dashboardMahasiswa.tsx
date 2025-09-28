@@ -1,9 +1,9 @@
-import ProfileCard from "../../components/ui/mahasiswa/dashboard/profileCardMahasiswa.tsx";
-import TabelTugasDanMataKuliah from "../../components/ui/mahasiswa/dashboard/tabelTugasDanMataKuliah.tsx";
-import WelcomeCard from "../../components/ui/mahasiswa/dashboard/wellcomeCard.tsx";
-import TopNavbar from "../../components/layout/navBar.tsx";
-import SideBar from "../../components/layout/sideBar.tsx";
-import CourseCard from "../../components/ui/mahasiswa/dashboard/informasiMatakuliahCard.tsx";
+import ProfileCard from "../../../components/ui/mahasiswa/dashboard/profileCardMahasiswa.tsx";
+import TabelTugasDanMataKuliah from "../../../components/ui/mahasiswa/dashboard/tabelTugasDanMataKuliah.tsx";
+import WelcomeCard from "../../../components/ui/mahasiswa/dashboard/wellcomeCard.tsx";
+import TopNavbar from "../../../components/layout/navBar.tsx";
+import SideBar from "../../../components/layout/sideBar.tsx";
+import CourseCard from "../../../components/ui/mahasiswa/dashboard/informasiMatakuliahCard.tsx";
 
 function DashboardMahasiswa() {
   // const [count, setCount] = useState(0);
@@ -29,7 +29,7 @@ function DashboardMahasiswa() {
                 nim={"2201020038"}
                 role={"Mahasiswa"}
                 status={"Aktif"}
-                // bgColor={"bg-sky-600"}
+                bgColor={"white"}
               />
             </div>
           </div>

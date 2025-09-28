@@ -84,56 +84,49 @@ const sideBar = ({}) => {
           </Link>
         </div>
 
-        <a
-          href="#"
-          className="flex items-center gap-3 px-4 py-3 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium group relative"
-          title={isCollapsed ? "Daftar Tugas" : ""}
-        >
-          <BookOpen
-            size={20}
-            className="text-slate-500 group-hover:text-blue-600 flex-shrink-0"
-          />
-          {!isCollapsed && "Daftar Tugas"}
-          {isCollapsed && (
-            <div className="absolute left-full ml-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
-              Daftar Tugas
-            </div>
-          )}
-        </a>
+        <div className="px-4 py-3 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium group relative">
+          <Link to="/daftar-tugas" className="flex items-center gap-3">
+            <Home
+              size={20}
+              className="text-slate-500 group-hover:text-blue-600 flex-shrink-0"
+            />
+            {!isCollapsed && "Daftar Tugas"}
+            {isCollapsed && (
+              <div className="absolute left-full ml-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
+                Daftar Tugas
+              </div>
+            )}
+          </Link>
+        </div>
+        <div className="px-4 py-3 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium group relative">
+          <Link to="/daftar-kelas" className="flex items-center gap-3">
+            <Home
+              size={20}
+              className="text-slate-500 group-hover:text-blue-600 flex-shrink-0"
+            />
+            {!isCollapsed && "Daftar Kelas"}
+            {isCollapsed && (
+              <div className="absolute left-full ml-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
+                Daftar Kelas
+              </div>
+            )}
+          </Link>
+        </div>
 
-        <a
-          href="#"
-          className="flex items-center gap-3 px-4 py-3 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium group relative"
-          title={isCollapsed ? "Daftar Kelas" : ""}
-        >
-          <Layers
-            size={20}
-            className="text-slate-500 group-hover:text-blue-600 flex-shrink-0"
-          />
-          {!isCollapsed && "Daftar Kelas"}
-          {isCollapsed && (
-            <div className="absolute left-full ml-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
-              Daftar Kelas
-            </div>
-          )}
-        </a>
-
-        <a
-          href="#"
-          className="flex items-center gap-3 px-4 py-3 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium group relative"
-          title={isCollapsed ? "Informasi" : ""}
-        >
-          <Info
-            size={20}
-            className="text-slate-500 group-hover:text-blue-600 flex-shrink-0"
-          />
-          {!isCollapsed && "Informasi"}
-          {isCollapsed && (
-            <div className="absolute left-full ml-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
-              Informasi
-            </div>
-          )}
-        </a>
+        <div className="px-4 py-3 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-200 font-medium group relative">
+          <Link to="/info" className="flex items-center gap-3">
+            <Home
+              size={20}
+              className="text-slate-500 group-hover:text-blue-600 flex-shrink-0"
+            />
+            {!isCollapsed && "Info"}
+            {isCollapsed && (
+              <div className="absolute left-full ml-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
+                Info
+              </div>
+            )}
+          </Link>
+        </div>
       </nav>
 
       {/* Footer */}
