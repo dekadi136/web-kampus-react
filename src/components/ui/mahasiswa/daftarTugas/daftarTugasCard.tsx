@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router";
+
 type Task = {
   id: number;
   course: string;
@@ -27,6 +29,8 @@ const tasks: Task[] = [
 ];
 
 export default function DaftarTugas() {
+  const navigate = useNavigate();
+
   return (
     <div className="w-full p-6 bg-white rounded-lg shadow">
       {/* Header */}
@@ -54,7 +58,10 @@ export default function DaftarTugas() {
                 Deadline {task.deadline}
               </p>
             </div>
-            <button className="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition">
+            <button
+              className="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition"
+              onClick={() => navigate(`/daftar-tugas/ ${task.id}`)}
+            >
               Buat
             </button>
           </div>

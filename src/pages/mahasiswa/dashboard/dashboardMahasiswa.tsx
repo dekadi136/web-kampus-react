@@ -10,7 +10,7 @@ function DashboardMahasiswa() {
 
   return (
     <>
-      <div className="flex">
+      <div className="flex bg-slate-200">
         <SideBar />
         <div className="flex flex-col w-full">
           <TopNavbar />
@@ -29,7 +29,7 @@ function DashboardMahasiswa() {
                 nim={"2201020038"}
                 role={"Mahasiswa"}
                 status={"Aktif"}
-                bgColor={"white"}
+                bgColor={"bg-white"}
               />
             </div>
           </div>

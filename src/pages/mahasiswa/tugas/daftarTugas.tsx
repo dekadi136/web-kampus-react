@@ -5,7 +5,7 @@ import DaftarTugasCard from "../../../components/ui/mahasiswa/daftarTugas/daftar
 export default function DaftarTugas() {
   return (
     <>
-      <div className="flex">
+      <div className="flex bg-slate-200">
         <SideBar />
         <div className="flex flex-col w-full">
           <TopNavbar />

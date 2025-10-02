@@ -36,40 +36,53 @@ export default function TaskTable() {
   return (
     <div className="">
       {/* Card Container */}
-      <div className="bg-white rounded-lg shadow p-6">
+      <div className="bg-white rounded-xl shadow-lg p-6">
         {/* Navbar */}
-        <nav className="flex gap-6 mb-6 border-b pb-2 text-sm font-medium text-gray-600">
-          <button className="hover:text-blue-600">Tugas</button>
-          <button className="hover:text-blue-600">Kelas Mata Kuliah</button>
+        <nav className="flex gap-6 mb-6 border-b pb-3 text-sm font-medium text-gray-600">
+          <button className="hover:text-blue-600 transition-colors">
+            Tugas
+          </button>
+          <button className="hover:text-blue-600 transition-colors">
+            Kelas Mata Kuliah
+          </button>
         </nav>
 
         {/* Table */}
         <div className="overflow-x-auto">
-          <table className="w-full text-sm text-left">
-            <thead className="text-gray-600 font-medium border-b">
+          <table className="w-full text-sm text-left border-collapse">
+            <thead className="bg-gray-100 text-gray-700">
               <tr>
-                <th className="py-2 px-2">No</th>
-                <th className="py-2 px-2">Nama Tugas</th>
-                <th className="py-2 px-2">Status</th>
-                <th className="py-2 px-2 text-right">Kumpulkan</th>
+                <th className="py-3 px-4">No</th>
+                <th className="py-3 px-4">Nama Tugas</th>
+                <th className="py-3 px-4">Status</th>
+                <th className="py-3 px-4 text-right">Kumpulkan</th>
               </tr>
             </thead>
             <tbody className="text-gray-700">
-              {tasks.map((task) => (
-                <tr key={task.id} className="border-b last:border-none">
-                  <td className="py-3 px-2">{task.id}</td>
-                  <td className="py-3 px-2 flex items-center gap-3">
-                    {task.title}
-                  </td>
-                  <td className="py-3 px-2">
-                    <span className={`${task.statusColor} font-medium`}>
+              {tasks.map((task, index) => (
+                <tr
+                  key={task.id}
+                  className="border-b last:border-none hover:bg-gray-50 transition"
+                >
+                  <td className="py-3 px-4">{index + 1}</td>
+                  <td className="py-3 px-4">{task.title}</td>
+                  <td className="py-3 px-4">
+                    <span
+                      className={`px-2 py-1 rounded-full text-xs font-medium ${task.statusColor}`}
+                    >
                       {task.status}
                     </span>
                   </td>
-                  <td className="py-3 px-2 text-right">
-                    <button className="px-3 py-1 rounded bg-blue-500 text-white text-xs hover:bg-blue-600">
-                      {task.action}
-                    </button>
+                  <td className="py-3 px-4 text-right">
+                    {task.action == "Kumpulkan" ? (
+                      <button className="px-4 py-1.5 rounded-md bg-blue-500 text-white text-xs font-medium hover:bg-blue-600 transition">
+                        {task.action}
+                      </button>
+                    ) : (
+                      <button className="px-4 py-1.5 rounded-md bg-green-500 text-white text-xs font-medium hover:bg-blue-600 transition">
+                        {task.action}
+                      </button>
+                    )}
                   </td>
                 </tr>
               ))}

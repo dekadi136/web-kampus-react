@@ -2,7 +2,7 @@ import React from "react";
 
 export default function WelcomeCard() {
   return (
-    <div className="bg-blue-500 rounded-lg p-6 flex items-center justify-between text-white">
+    <div className="bg-sky-600 rounded-lg p-6 flex items-center justify-between text-slate-100">
       {/* Text Section */}
       <div>
         <h2 className="font-bold text-3xl mb-2">Hello Sophia!</h2>

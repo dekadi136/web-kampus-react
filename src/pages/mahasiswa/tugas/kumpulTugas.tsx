@@ -6,7 +6,7 @@ import KumpulTugasCard from "../../../components/ui/mahasiswa/daftarTugas/kumpul
 export default function KumpulTugas() {
   return (
     <>
-      <div className="flex">
+      <div className="flex bg-slate-200">
         <SideBar />
         <div className="flex flex-col w-full">
           <TopNavbar />

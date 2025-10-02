@@ -9,6 +9,7 @@ import DaftarTugas from "./pages/mahasiswa/tugas/daftarTugas.tsx";
 import DaftarKelas from "./pages/mahasiswa/kelas/daftarKelas.tsx";
 import Info from "./pages/mahasiswa/info/info.tsx";
 import KumpulTugas from "./pages/mahasiswa/tugas/kumpulTugas.tsx";
+import InformasiKelas from "./pages/mahasiswa/kelas/informasiKelas.tsx";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
   {
     path: "/daftar-kelas",
     element: <DaftarKelas />,
+  },
+  {
+    path: "/daftar-kelas/:id",
+    element: <InformasiKelas />,
   },
   {
     path: "/info",

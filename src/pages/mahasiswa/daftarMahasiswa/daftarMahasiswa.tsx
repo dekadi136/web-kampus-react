@@ -11,7 +11,7 @@ function DashboardMahasiswa() {
 
   return (
     <>
-      <div className="flex">
+      <div className="flex bg-slate-200">
         <SideBar />
         <div className="flex flex-col w-full">
           <TopNavbar />
