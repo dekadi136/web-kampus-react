@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
 import DashboardMahasiswa from "./pages/mahasiswa/dashboard/dashboardMahasiswa.tsx";
-import Auth from "./components/layout/auth.tsx";
+import Auth from "./pages/mahasiswa/auth/auth.tsx";
 import DaftarMahasiswa from "./pages/mahasiswa/daftarMahasiswa/daftarMahasiswa.tsx";
 import DaftarTugas from "./pages/mahasiswa/tugas/daftarTugas.tsx";
 import DaftarKelas from "./pages/mahasiswa/kelas/daftarKelas.tsx";

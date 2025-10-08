@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import Login from "../ui/auth/login";
-import Register from "../ui/auth/register";
+import Login from "../../../components/ui/auth/login";
+import Register from "../../../components/ui/auth/register";
 
 function Auth() {
   const [isToggle, setIsToggle] = useState(true);
@@ -52,9 +52,11 @@ function Auth() {
                     dengan satu akun.
                   </p>
                 </>
-              ): <h3 className="text-lg font-semibold text-gray-700">
-                    Registrasi dan Verifikasi
-                  </h3>}
+              ) : (
+                <h3 className="text-lg font-semibold text-gray-700">
+                  Registrasi dan Verifikasi
+                </h3>
+              )}
             </div>
 
             {/* Google Login */}

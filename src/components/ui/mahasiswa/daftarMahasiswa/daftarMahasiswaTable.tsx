@@ -10,14 +10,12 @@ const students: Student[] = [
   { id: 1, name: "I Made Aditya", status: "aktif" },
   { id: 2, name: "Ni Luh Sari", status: "nonaktif" },
   { id: 3, name: "I Wayan Putra", status: "aktif" },
-  { id: 4, name: "Kadek Rina", status: "korti" },
+  { id: 4, name: "Kadek Rina", status: "nonaktif" },
   { id: 5, name: "Komang Yudi", status: "aktif" },
 ];
 
 export default function DaftarMahasiswa() {
-  const [filter, setFilter] = useState<"all" | "aktif" | "nonaktif" | "korti">(
-    "all"
-  );
+  const [filter, setFilter] = useState<"all" | "aktif" | "nonaktif">("all");
 
   const filteredStudents =
     filter === "all" ? students : students.filter((s) => s.status === filter);
@@ -39,12 +37,10 @@ export default function DaftarMahasiswa() {
 
       {/* Filter Buttons */}
       <div className="flex flex-wrap gap-3 mb-6">
-        {["all", "aktif", "nonaktif", "korti"].map((f) => (
+        {["all", "aktif", "nonaktif"].map((f) => (
           <button
             key={f}
-            onClick={() =>
-              setFilter(f as "all" | "aktif" | "nonaktif" | "korti")
-            }
+            onClick={() => setFilter(f as "all" | "aktif" | "nonaktif")}
             className={`px-4 py-2 rounded-lg text-sm font-semibold shadow-sm transition ${
               filter === f
                 ? "bg-blue-600 text-white shadow-md"
@@ -55,9 +51,7 @@ export default function DaftarMahasiswa() {
               ? "Semua"
               : f === "aktif"
               ? "Aktif"
-              : f === "nonaktif"
-              ? "Non-aktif"
-              : "Korti"}
+              : f === "nonaktif" && "Non-aktif"}
           </button>
         ))}
       </div>
